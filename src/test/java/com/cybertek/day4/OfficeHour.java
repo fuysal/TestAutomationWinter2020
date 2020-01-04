@@ -20,7 +20,7 @@ public class OfficeHour {
 
         String pageTitle = driver.getTitle();
 
-        if (pageTitle.contains("Google")){
+        if (pageTitle.contains("amazon")){
             System.out.println("passed");
         }else{
             System.out.println("Failed");

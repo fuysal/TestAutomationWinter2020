@@ -8,8 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Test1 {
     public static void main(String[] args) throws Exception{
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
         driver.manage().window().maximize();
         driver.get("http://practice.cybertekschool.com/forgot_password");
 
