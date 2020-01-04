@@ -2,14 +2,14 @@ package com.cybertek.utilities;
 
 public class SelenuimUtils {
 
-    public static void verifyEquals(String expectedREsult, String actualReasult){
+    public void verifyEquals(String expectedResult, String actualResult){
 
-        if (expectedREsult.equals(actualReasult)){
+        if (expectedResult.equals(actualResult)){
             System.out.println("Passed");
         }else{
             System.out.println("Failed");
-            System.out.println("Expected result: " + expectedREsult);
-            System.out.println("Actual result: " + actualReasult);
+            System.out.println("Expected result: " + expectedResult);
+            System.out.println("Actual result: " + actualResult);
 
         }
 
