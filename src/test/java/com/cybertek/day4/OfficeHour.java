@@ -18,7 +18,7 @@ public class OfficeHour {
         driver.manage().window().maximize();
 
 
-        String pageTitle = driver.getTitle():
+        String pageTitle = driver.getTitle();
 
         if (pageTitle.contains("Google")){
             System.out.println("passed");

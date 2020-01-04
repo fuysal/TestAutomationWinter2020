@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
 
-    public WebDriver getDriver(String browser){
+    public static WebDriver getDriver(String browser){
         if(browser.equals("chrome")){
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();

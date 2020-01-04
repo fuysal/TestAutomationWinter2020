@@ -2,7 +2,7 @@ package com.cybertek.utilities;
 
 public class SelenuimUtils {
 
-    public void verifyEquals(String expectedREsult, String actualReasult){
+    public static void verifyEquals(String expectedREsult, String actualReasult){
 
         if (expectedREsult.equals(actualReasult)){
             System.out.println("Passed");
