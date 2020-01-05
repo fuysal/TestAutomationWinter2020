@@ -17,21 +17,19 @@ public class LocatorsPracticeClassName {
     //check how many elements you will get, it must be 48.
 
     public static void main(String[] args) {
-            test1();
-
+        test1();
     }
 
-        public static void test1(){
+    public static void test1(){
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("htttp://practice.cybertekschool.com/");
-
-            List<WebElement> examples = driver.findElements(By.className("list-group-item"));
-            for (WebElement element: examples){
-                System.out.println(element.getText());
-            }
-            driver.close();
+        driver.get("http://practice.cybertekschool.com/");
+        List<WebElement> examples = driver.findElements(By.className("list-group-item"));
+        for(WebElement element: examples){
+            System.out.println(element.getText());
         }
+        driver.close();
+    }
 
 
 }

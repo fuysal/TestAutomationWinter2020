@@ -67,7 +67,9 @@ driver.findElements(By.tagName("button")); <- returns list of web elements.
   List<WebElement> findElements(By by);
 
 
-  Xpath - stands for XML path. It was created to find elements on XML and HTML documents. Xpath uses tags, attributes and text to allocate element. If you cannot find element by any locator - xpath will do it.
+  Xpath - stands for XML path. It was created to find elements on XML and HTML documents.
+   Xpath uses tags, attributes and text to allocate element.
+    If you cannot find element by any locator - xpath will do it.
 
   There are 2 types of xpath: Relative and Absolute
 

@@ -1,4 +1,4 @@
-package com.cybertek.day4;
+package com.cybertek.officeHour;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
