@@ -2,11 +2,12 @@ package com.cybertek.day6;
 
 import com.cybertek.utilities.BrowserFactory;
 import com.cybertek.utilities.SelenuimUtils;
-import jdk.nashorn.internal.runtime.regexp.joni.constants.TargetInfo;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class RadioButtonsTests {
@@ -14,7 +15,7 @@ public class RadioButtonsTests {
 
     public static void main(String[] args) {
         openRadioButtonPage();
-        test2();
+        test4();
         driver.close();
 
 
@@ -95,12 +96,25 @@ public class RadioButtonsTests {
             System.out.println("FAILED");
             System.out.println("Blue is selected!");
         }
-
+    }
         //Let's write a test
         //that will make sure
         //that only one radio button is selected
-        //public static void test4 () {
-        // lets find all radio
+        public static void test4 () {
+            // lets find all radio
+
+            List<WebElement> listOfRadioButtons = driver.findElements(By.xpath("//input[@type = 'radio']"));
+
+            int count = 0;
+
+
+            for (WebElement radioButton: listOfRadioButtons){
+                if (radioButton.isSelected()){
+                    System.out.println(radioButton.getAttribute("id"));
+                    count++;
+                }
+            }
+            System.out.println(count);
         }
     }
-}
+

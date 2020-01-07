@@ -92,6 +92,11 @@ This xpath means find me input with attribute type that has value checkbox, and 
 .isDisplayed() - will return true, if element is not hidden. In HTML you can hide elements, even though they are in source code. Thus, element will not be visible to user.
 
 INTERVEW QESTION: HOW TO VERIFY THAT ELEMENT DOESN'T EXIST ANY MORE?
-This method (isDisplayed()) will only check if element is visible or no. If element is not on page at all, you will get NoSuchElementException. I saw many times, when people where using this method to verify that element doesn't exist any more. This is a mistake. In order to check if element doesn't exist, use: findElements(locator).size() == 0. If list is empty, that means this element doesn't exists, not in the code. No exception will happened. For example, you need to verify that that record was deleted, or some image, etc.
+This method (isDisplayed()) will only check if element is visible or no.
+ If element is not on page at all, you will get NoSuchElementException.
+ I saw many times, when people where using this method to verify that element doesn't exist any more.
+ This is a mistake. In order to check if element doesn't exist, use: findElements(locator).size() == 0.
+ If list is empty, that means this element doesn't exists, not in the code. No exception will happened.
+  For example, you need to verify that that record was deleted, or some image, etc.
 
 
