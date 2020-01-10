@@ -1,4 +1,4 @@
-package day7;
+package com.cybertek.day7;
 
 import com.cybertek.utilities.BrowserFactory;
 import com.cybertek.utilities.SelenuimUtils;
@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Sleeper;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

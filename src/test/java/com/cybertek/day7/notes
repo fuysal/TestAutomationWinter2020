@@ -83,6 +83,7 @@ inside [ ] you can specify index of element.
 
 //button[@class='btn btn-primary'][@onclick='button2()']
 
+
 - to specify 2 attributes
 
 //button[@class='btn btn-primary' and @onclick='button2()']
