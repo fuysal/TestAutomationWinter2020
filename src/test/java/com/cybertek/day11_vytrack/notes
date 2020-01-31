@@ -34,7 +34,8 @@ Verify Save And Close dropdown option is displayed
 Verify Save And New dropdown option is displayed
 Verify Save dropdown option is displayed
 
-One thing that I want to emphasize that it's not final structure of automation framework. We don't design our framework based on class. Any duplication has been done due to practice purpose.
+One thing that I want to emphasize that it's not final structure of automation framework.
+We don't design our framework based on class. Any duplication has been done due to practice purpose.
 
 
 

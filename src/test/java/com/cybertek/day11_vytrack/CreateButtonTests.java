@@ -1,4 +1,4 @@
-package com.cybertek.day11;
+package com.cybertek.day11_vytrack;
 
 import com.cybertek.utilities.SelenuimUtils;
 import com.cybertek.utilities.VYTrackUtils;
@@ -14,6 +14,16 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class CreateButtonTests {
+
+
+
+//Scenario: Verify for store manager
+//Login as story manager
+//Go to Activities --> Calls
+//Verify that Log Call button is displayed
+//Go to Activities --> Calendar Events
+//Verify that Create Calendar Event button is displayed
+
     WebDriver driver;
     String createButtonLocator = "a[title='Log call']"; // locator for log call button
     String createCalendarEventButtonLocator = "a[title='Create Calendar event']";
@@ -32,6 +42,7 @@ public class CreateButtonTests {
     @Test(priority = 1)
     public void storeManagerTest(){
         //login
+
         VYTrackUtils.login(driver,"storemanager85","UserUser123" );
         //navigate to the Calls
         VYTrackUtils.navigateToModule(driver, "Activities", "Calls");
