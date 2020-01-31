@@ -101,7 +101,8 @@ assertFalse() - checks if something is false. If no - then it fail and stop your
 
 using this annotation we don't need a main method to run class/ method.
 
-@BeforeMethod -> it will run method before every test method, regardless if other tests failed or passed. We can do following things:
+@BeforeMethod -> it will run method before every test method, regardless if other tests failed or passed.
+We can do following things:
 	 prepare test data
 	 open browser
 	 create connections
@@ -185,7 +186,8 @@ assertEquals(param1, param2)
 assertTrue(boolean)
 assertFalse(boolean)
 
-Also, testng provides soft assertions as well as hard assertions(regular). In case of soft assertions, your test will not interrupt in case of failure.
+Also, testng provides soft assertions as well as hard assertions(regular). In case of soft assertions,
+your test will not interrupt in case of failure.
 
 
 

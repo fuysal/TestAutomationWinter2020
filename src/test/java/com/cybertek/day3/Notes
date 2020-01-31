@@ -1,0 +1,100 @@
+For mac just chromedriver
+For windows chromedriver.exe
+
+What is Selenium?
+At least something happens we we run code.
+
+driver.get("URL") <-- to open some website
+Usually, all tests starts from opening a website.
+
+
+WebDrvier is an interface. ChromeDriver, FirefoxDriver implement this interface.
+
+
+
+In automation, people use a lot Thread.sleep(time); to achieve synchronization.
+What is synchronization? Is when your script and web application synced.Because, selenium doesn't wait by default. For instance: if browser loads page to slow, and some button is not visible or displayed yet, and your selenium script is trying to click on the button - your code will fail, because selenium will not wait for appearance of that button by default. Thread.sleep() is not directly related to selenium, it's coming from java. It suspends current thread execution for specific amount of time. It's the worst way to achieve synchronization because regardless or website response time, your wait time will be fixed.
+
+Interview story: When I joined my current project, out framework had a lot of Thread.sleep(). Me as, a super hero changed all these hard coded wait to explicit waits. By doing this, we reduced execution time twice(haha).
+
+class InterruptedException extends Exception {
+
+we can put either InterruptedException or Exception for Thread.sleep() catch statement, because InterruptedException class extends Exception class. Also, we can use Throwable.
+
+
+Failed
+Expected title: Practice$
+Actual title: Practice
+
+We are getting actual result from web page.
+
+
+getTitle() - returns title of the page.
+In the source code, in HTML, it looks like this :
+<title>I am title!</title>
+Value in between tags is a title of the page.
+Selenium reads this value with a help of getTitle() method.
+
+driver.close() - to close browser at the end of execution.
+
+break till 3:12 EST!
+
+Exceptions - is your burden in selenium.
+
+
+USually people at work type FYI. (for your information)
+
+So FYI, at work I used maximize() not fullscreen().
+
+driver.getPageSource();
+
+Story: At work, I had to use InternetExplorer for testing. There was one page, where I had click on button and then modal dialog was displayed. Because application was not optimized for chrome, only for ie, I couldn't even open that window in crhrome to inspect source code. IE doesn't provide these features to inspect source code. I couldn't read that modal dialog with chrome or any other browser to inspect and create locators. So in order to read the source of code of that page, I used method getPageSource() then I was able to read it and based on that info created locators.
+
+locator - is like an address of element on the page. Selenium use locators to to find elements on the page.
+
+Main reason to use this method - when you need to read a source of the page. Because you can store it somewhere (let's say in string) for some kind of verifications
+/manipulations operations.
+
+if you will put incorrect URL, you will get
+
+Exception in thread "main" org.openqa.selenium.InvalidArgumentException: invalid argument
+
+driver.navigate().to() Load a new web page in the current browser window.
+
+According to the selenium documentation there is no difference between get() and navigate().to()
+
+navigate() method allowing the driver to access the browser's history and to navigate to a given URL.
+
+You can practice , but don't try to do DDOS attack.
+
+Behind a scenes, navigate(),to() calls get() method.
+
+
+Title: Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more
+
+URL: https://www.amazon.com/
+
+driver.getTitle() - for page title
+driver.getgetCurrentUrl() - to read current website url
+driver.navigate().to() - to go to some website in the same window
+driver.navigate().back() - to navigate to the previous website in the browser history.
+driver.navigate().forward() - to navigate to the latest opened page, for example after you did navigate back() you can come back to the website with navigate().forward().
+
+driver.navigate().refresh(); - to refresh/reload the page.
+==================
+WebDriver is an interface. We use it to interact with web browser. Selenium talks with browser directly through HTTP requests.
+
+get() method to open url
+close() to close browser
+getTitle() to read title
+navigate() to browse in browser history
+navigate().to() to open new url in the same window
+navigate().back() to navigate to the previous web site.
+navigate().forward() we can use after navigate().back() to come back to the last opened web site.
+navigate().refresh() to refresh/reload the page
+getPageSource() to get HTLM code of the page
+maximize() to maximize window
+getCurrentUrl() to get URl of current page
+fullscreen() to open browser in the fullscreen mode
+
+Thread.sleep(time); to put on hold current test execution.

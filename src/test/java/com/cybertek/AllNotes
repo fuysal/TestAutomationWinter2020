@@ -1,0 +1,1454 @@
+
+1)
+
+Today is HTML class.
+HTML is a language but not programing.
+Hypertext Markup Language
+
+We have a front-end that consist of HTML, CSS and JavaScript.
+
+Java and JavaScript are totally different.
+
+HTML is a skeleton of website
+CSS is for design (colors, shadows, paddings, margin )
+
+JavaScript for actions (behavior) - alerts, AJAX..
+
+JS can be used for back-end too, for example NodeJS is platform that allows develop beck-end side of web application.
+
+
+IN my project we had bunch of applications. WE used HTML, CSS, JavaScript (JQuery) for front-end
+
+For back-end we used JAVA EE only
+
+To see source code of the page, press F12 or
+right click -> inspect
+
+So html files have extension .html
+
+Let's say in java we have files .java
+
+
+Latest version is HTML5
+
+DOWNLOAD
+https://www.sublimetext.com/
+
+You can use Eclipse, or Intellij but you need to download add-on (extension) that will provide auto complete support. Otherwise, it's gonna be. very hard to type.
+
+Please use sublime.
+
+
+view -> syntax -> select HTML
+
+<!DOCTYPE html> this declaration represents document type. It helps browser to display web pages correctly.
+
+mostly tags have to parts: opening tag <html> and closing tag </html> Whatever is inside will be content.
+######################
+
+
+Once you wrote some code, save it first then refresh the page. To save - click command + s
+
+h1..h6 means heading. h1 is the biggest, h6 is the smallest, in terms of text size.
+
+<meta charset="utf-8"> this one is to text encoding.
+
+
+https://www.w3schools.com/ for HTML/CSS/JAVASCRIPT
+
+IN the body we have a main content. In the head we have a title, meta data and imports. For example if we need to import javascript or css, we will specify it in the head.
+
+HTML document is made of tags.
+
+<html> is a root element
+
+we need opening part <html> and closing </html>
+
+in the <body> we will have a main content.
+
+Once you write some code, save it and refresh the web page to see updated code.
+
+<p> --> for paragraph
+<b> --> for bold text
+<i> --> for italic text
+<strong> to make text bold
+<br> --> stands for brake, and then it moves content on the new line. ///There is no </br>
+
+<hr> --> horizontal line
+
+in java we use // or /* **/
+in html <!-- -->
+
+BREAK TILL 9:14
+
+<img src="" alt=""> for image, src for image path, alt - for alternative message, in case image will not load.
+
+<ol> for ordered list, <ul> - unordered list. Every element inside a list, must be inside <li> element/tag
+
+style="background: #ef9a45"
+
+style attribute stands for styling. We can create separate css file for styling, or we can use this tag to list styling.
+
+How to find color codes? Look for color picker in google. You can use rgb or hexadecimal format.
+<a href="some web site">Click ME!</a> --> tag stands for hyper links. href attribute will contain link.
+
+
+target="_blank" will open in the new window
+
+<table> tag for tables then we have <tr> for rows and <td> for columns
+
+###################################################################################################################
+
+2)
+
+Today is 6/19/2019
+
+Agenda:
+	- HTML review
+	- Some CSS
+	- Some JS
+	- Introduction to Test Automation
+	- Selenium Setup
+	- Some basic navigation commands
+
+######################################
+
+What is HTML - Hypertext Markup Language
+
+It's not a programing language, it's just a markup language.
+
+HTML is an essential part of every website, along with CSS and JavaScript
+
+HTML will tell what kind of elements and where they suppose to be on the page
+CSS will tell how elements suppose to look like
+JavaScript will tell how they suppose to behave
+
+Most important thing is that we don't need to know all of them. We need to know how to find solutions rather than memorize all things.
+
+
+It doesn't matter were server is located, we can open that website if it runs on the server and there is an Internet connection.
+
+IN sublime, change syntax to html, then you should be able to use sublime shortcuts.
+type html and click tab to auto generate basic html form. Then, you can type name of any tag name and then click tab to generate opening and closing tag.
+
+
+<title>WebStorm: The Smartest JavaScript IDE by JetBrains</title>
+
+title always in the header <head>.
+placeholder is an attribute that will give background text to input box
+
+names of html tags are used to send data to the server.
+Every name will have value that you selected/entered.
+
+
+##########################
+
+Automation part
+
+Software helps to love problems.
+
+Our motto: Copy paste, make it work. Less effort - more money!
+
+Work smart , not hard!
+
+ How to Configure the Driver ?
+ Property for Chrome:
+❖ webdriver.chrome.driver
+❖ Property for Firefox
+❖ webdriver.gecko.driver
+❖ Property for IE
+❖ webdriver.ie.driver
+
+System.setProperty("webdriver.chrome.driver", "/Users/cybertekstudio/Desktop/selenium dependecies/drivers/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://google.com");
+
+        get method will open some website
+
+        How to search in Intellij: double click on shift
+
+SELENIUM CODE
+
+package com.cybertek;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Task1 {
+    public static void main(String[] args) {
+//        Create a new class called Task1
+//◈ Launch Chrome and navigate to : https://www.cybertekschool.com/
+//◈ Launch Firefox and navigate to : http://www.practice.cybertekschoool.com/
+
+        System.setProperty("webdriver.chrome.driver", "/Users/cybertekstudio/Desktop/selenium dependecies/drivers/chromedriver");
+        System.setProperty("webdriver.gecko.driver", "/Users/cybertekstudio/Desktop/selenium dependecies/drivers/geckodriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://cybertekschool.com");
+
+        driver = new FirefoxDriver();
+        driver.get("http://practice.cybertekschool.com");
+
+
+    }
+}
+
+#####################################################################################################################
+
+3)
+
+
+
+For mac just chromedriver
+For windows chromedriver.exe
+
+What is Selenium?
+At least something happens we we run code.
+
+driver.get("URL") <-- to open some website
+Usually, all tests starts from opening a website.
+
+
+WebDrvier is an interface. ChromeDriver, FirefoxDriver implement this interface.
+
+
+
+In automation, people use a lot Thread.sleep(time); to achieve synchronization.
+What is synchronization? Is when your script and web application synced.Because, selenium doesn't wait by default. For instance: if browser loads page to slow, and some button is not visible or displayed yet, and your selenium script is trying to click on the button - your code will fail, because selenium will not wait for appearance of that button by default. Thread.sleep() is not directly related to selenium, it's coming from java. It suspends current thread execution for specific amount of time. It's the worst way to achieve synchronization because regardless or website response time, your wait time will be fixed.
+
+Interview story: When I joined my current project, out framework had a lot of Thread.sleep(). Me as, a super hero changed all these hard coded wait to explicit waits. By doing this, we reduced execution time twice(haha).
+
+class InterruptedException extends Exception {
+
+we can put either InterruptedException or Exception for Thread.sleep() catch statement, because InterruptedException class extends Exception class. Also, we can use Throwable.
+
+
+Failed
+Expected title: Practice$
+Actual title: Practice
+
+We are getting actual result from web page.
+
+
+getTitle() - returns title of the page.
+In the source code, in HTML, it looks like this :
+<title>I am title!</title>
+Value in between tags is a title of the page.
+Selenium reads this value with a help of getTitle() method.
+
+driver.close() - to close browser at the end of execution.
+
+break till 3:12 EST!
+
+Exceptions - is your burden in selenium.
+
+
+USually people at work type FYI. (for your information)
+
+So FYI, at work I used maximize() not fullscreen().
+
+driver.getPageSource();
+
+Story: At work, I had to use InternetExplorer for testing. There was one page, where I had click on button and then modal dialog was displayed. Because application was not optimized for chrome, only for ie, I couldn't even open that window in crhrome to inspect source code. IE doesn't provide these features to inspect source code. I couldn't read that modal dialog with chrome or any other browser to inspect and create locators. So in order to read the source of code of that page, I used method getPageSource() then I was able to read it and based on that info created locators.
+
+locator - is like an address of element on the page. Selenium use locators to to find elements on the page.
+
+Main reason to use this method - when you need to read a source of the page. Because you can store it somewhere (let's say in string) for some kind of verifications
+/manipulations operations.
+
+if you will put incorrect URL, you will get
+
+Exception in thread "main" org.openqa.selenium.InvalidArgumentException: invalid argument
+
+driver.navigate().to() Load a new web page in the current browser window.
+
+According to the selenium documentation there is no difference between get() and navigate().to()
+
+navigate() method allowing the driver to access the browser's history and to navigate to a given URL.
+
+You can practice , but don't try to do DDOS attack.
+
+Behind a scenes, navigate(),to() calls get() method.
+
+
+Title: Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more
+
+URL: https://www.amazon.com/
+
+driver.getTitle() - for page title
+driver.getgetCurrentUrl() - to read current website url
+driver.navigate().to() - to go to some website in the same window
+driver.navigate().back() - to navigate to the previous website in the browser history.
+driver.navigate().forward() - to navigate to the latest opened page, for example after you did navigate back() you can come back to the website with navigate().forward().
+
+driver.navigate().refresh(); - to refresh/reload the page.
+==================
+WebDriver is an interface. We use it to interact with web browser. Selenium talks with browser directly through HTTP requests.
+
+get() method to open url
+close() to close browser
+getTitle() to read title
+navigate() to browse in browser history
+navigate().to() to open new url in the same window
+navigate().back() to navigate to the previous web site.
+navigate().forward() we can use after navigate().back() to come back to the last opened web site.
+navigate().refresh() to refresh/reload the page
+getPageSource() to get HTLM code of the page
+maximize() to maximize window
+getCurrentUrl() to get URl of current page
+fullscreen() to open browser in the fullscreen mode
+
+Thread.sleep(time); to put on hold current test execution.
+
+
+
+################################################################################################################
+
+4)
+
+
+Today is 6/25/2019
+
+Topic of today is Maven.
+
+Check if maven is installed on your computer:
+
+Open terminal and type: mvn --version
+
+If you see something like this
+Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T14:41:47-04:00)
+Maven home: /usr/local/Cellar/maven/3.6.0/libexec
+
+You are good to go.
+
+On windows it's gonna be a litle different.
+
+But if you are getting error, install maven. Please watch videos on canvas.'
+
+Visit offical website if you need to get more information or download maven: https://maven.apache.org/
+
+We are testing web based applications, that means application that you can open through the browser.
+
+How applications are written (developed)?
+
+	We have a requirements
+	choose tools
+	design our application
+	develop a code
+	test it
+	release
+
+How we create java project?
+	create a project
+	add libraries and dependencies
+	create a package
+	create a java class
+	write some code
+	write unit test
+	execute unit tests
+	code review
+	commit and push code to the remote repository (github, bitbucket)
+	deploy code - In general, make software/application available to use.
+
+	|Means send code to the application server and make it available for users through the browser.
+
+	dev -> qa -> preproduction (staging) -> production
+
+	preproduction is a mirror of production. Basically, if there is a some bug in the production, we can test in on preproduction version of application.
+
+Google Chrome is up to date
+Version 75.0.3770.100 (Official Build) (64-bit)
+
+So basically, build is a version of application.
+
+Maven is a project builder tool.
+There some tools that we use to automate build process: maven, ant, gradle.
+
+
+ BUILD FAILURE that means, maven was trying to build your project, and failed.
+
+Maven responsible for creating, managing dependencies,
+compiling, testing, deploying java applications.
+
+
+
+
+BREAK TILL 8:20
+
+Windows users - don't create project in windows folder!!!
+
+to create in 1 step:
+mvn archetype:generate -DgroupId=com.cybertek -DartifactId=myfirstMaven -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+ls - to view files
+cd - change directory
+cd .. - go back to the parent directory
+cd folder name - to open folder
+pwd - to see the path to the project
+/Users/cybertekstudio/first-maven-app
+
+We have to navigate to the project home folder. We cannot build/test... project if we are not inside project.
+
+In the home folder you will see pom.xml file
+
+When we compile code, maven will download all libraries and dependencies to the local repository.
+It's located in .m2 folder
+
+Intellij and Eclipse have in-build maven. You don't need to install it there. But, we install maven to use from command line (terminal, powershell).
+
+Commands (maven) for windows and mac are the same.
+
+Command to find .m2 folder:
+mvn help:evaluate -Dexpression=settings.localRepository
+
+If we need selenium libraries for proejct, we just put dependency into pom.xml and maven will download these libraries and store in local repository, which is .m2 folder.
+
+.m2 folder usually resides under user folder. On mac, this folder is hidden. Press command + shift + . to view hidden files.
+
+Step 1.
+
+mvn archetype:generate --> maven, please create a project for me based on archetypes (project templates) that you have available.
+
+Step 2.
+
+no need to select anything, we will just use default version. So we just have to press enter.
+
+Step 3.
+
+group id - stands for package name, we enter: com.cybertek
+artifact id - stands for project name, we entered first-maven-app
+
+Step 4.
+Snapshot 1.0 - default one, no need to change
+
+Then, we are expecting to see BUILD SUCCESS.
+
+That means, project was created and compiled successfully.
+
+
+In general, BUILD SUCCESS means that project compiled successfully and ready to use. Jar file will be assembled and you will find all these files under target folder of your project.
+
+Dependency tells what library and what version maven needs to download from remote repository to the local repository.
+
+Example:
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+
+
+pom stands for project object model.
+pom.xml will be created automatically once you generate maven project
+pom.xml - is a brain of maven project.
+
+pom file contains information about project (group id, name, version, artifact id ), project dependencies, plugins, goals (command that must be executed by maven), builds
+
+Maven life cycle:
+
+what is this?
+
+maven operations for compiling, building, testing and deploying our code.
+
+goal - it's a specific task.
+
+mvn compile - will compile your code
+mvn clean - will delete target folder. In this folder you will have result of compilation.
+
+mvn test - to test compiled source code
+
+to run test command, maven executes  compile command automatically.
+
+to run verify - maven executes compile, then test automatically
+
+
+Why we need maven for testing?
+
+To create a project.
+
+
+  <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.6.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+
+
+
+
+
+##########################################################
+
+5)
+
+Today is 6/26/2019
+
+ agenda:
+* quick review of yesterdays class
+*faker
+ What is WebElement
+ findElement(By.id)
+ findElement(By.name)
+ click()
+ sendKeys()
+
+ In Intellij, shortcut for importing: option+enter/ alt+enter
+
+ ON the planning meeting you are getting tickets that you will work on during the sprint. Every sprint you can handle 8 points. That means you will 3-4 tickets (jira issues)
+
+ Once sprint starts, you are picking one ticket and move it from to do to in progress.
+
+ Then you analyze your task to automate something.
+
+ You test manually first then you are starting writing automation scripts.
+
+ And usually, it starts from locating elements that you need to interact with. To do this, I use google chrome browser and dev tool and I inspect source code to create locators. Locator will help selenium to find element.
+
+ Since selenium doesn't see pages, it doesn't have eyes, it requires locators to find elements.
+
+
+ Selenium only needs html code to interact with it.
+
+Headless browsers don't need UI to run your selenium scripts.
+
+For example: PhantomJS, HTMLUnit, chrome browser can work in headless mode.
+
+What's the benefit? It's faster.
+
+
+WebElement object represents some kind of element on the page.
+
+Since WebElemnt is an interface, we cannot do:
+
+
+WebElement element = new WebElement() | It will not work
+
+instead
+
+we have to do:
+
+WebElement element = driver.findElement(By.locator(""));
+
+To create a web element, we need to find it first.
+
+To find it, we use findElement(), and this method takes object of By class. By stands for mechanism that used to locate elements within a document. I
+
+We will always type By.something.. By.id, By.xpath, By.cssSelector etc...
+
+
+That means, we tell selenium, based on what he must find element.
+
+We want to click on button, but selenium doesn't know where this button located automatically. That's why use locators.
+
+There are 8 locators:
+	id: is an attribute in HTML. id="value", then in the selenium code we will put By.id("value").
+	cssSelector:
+	xPath:
+	name:
+	tagName:
+	className:
+	linkText:
+	partialLinkText:
+
+
+we can click() on element
+
+How to  enter text?
+
+we will use method sendKeys("text");
+
+this method will help us to enter text.
+
+sendKeys("text" + Keys.Enter)
+sendKeys("text", Keys.Enter) <-- to enter text and hit enter button.
+
+clear() method that clears input text.
+
+ submitButton.submit(); // it works only with buttons. Click method is more flexible, but you can use it as an alternative for clicking on button.
+
+ StaleElementReferenceException: stale element reference: element is not attached to the page document
+
+
+ Or in other words - old element exception.
+ Once you find element, and page will refresh , you will get StaleElementReferenceException if you will try to interact with webelement again after refresh. Basically, selenium cannot find that element any more.
+
+
+
+###################################################
+6)
+
+
+Today is 6/30/2019
+
+BREAK TILL 2:02
+
+NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#woodenspoon"}
+
+This exception occurs when selenium cannot find element based on provided locator.
+
+Selenium doesn't wait by default, it doesn't have default implicit wait. So you will get an exception, once selenium will fail to allocate element on the page. This exception happens, even though your locator is correct. To prevent these failures, we use implicit and explicit wait.
+
+If locator is not unique, selenium will take first element.
+
+<h4 class="subheader">Welcome to the Secure Area. When you are done click logout below.</h4>
+
+driver.findElement(By.className("subheader"));
+
+Since there is no id and name, we can use class name to find this element.
+We need to find it in order to verify text. We checked class name,
+and looks like there is only one element with this class name. That means, we can use it.
+
+
+Locators - we use them (selenium) to find elements on the page.
+
+By.id -> the best way to find element, unless id is dynamic.
+if so, use Xpath.
+
+By.name -> name attribute sometimes is not unique, especially for radio buttons.
+
+By.tagName -> it refers to the HTML tag. If there are multiple elements with a same tag (for example <input>), then you will get first element in the list. Or you should you findElements and put your elements in the List<WebElement>. This locator is not very reliable for identifying unique elements.
+
+
+<h4 class="value">Text</h4>
+By.className -> in case of this locator, selenium will look for attribute value of class.   It's less likely unique, because class mostly used to style group of elements in CSS.
+
+<a class="button secondary radius" href="/logout"><i class="icon-2x icon-signout"> Logout</i></a>
+
+<a href="/abtest">A/B Testing</a>
+
+LinkText -> refers to the text of hyper link. If you see <a> tag, you can use this text for finding element by linkText.A/B Testing and Logout are link texts.
+
+By.partialLinkText -> same as linkText but text that you provide can be partial, not exactly the same. It's used when some part of hyperlink text is dynamic, and only some part is fixed. Based on this fixed part (text) you should be able to find element.
+
+
+StaleElementReferenceException means that selenium cannot find this element any more. Since after clicking button disappeared, selenium will not be able to find it.
+
+
+I had a text case, where I had to find all checkboxes, select all of them, and then verify that they were selected successfully after save. Since I had more that 40 checkboxes on the page, instead of creating one locator for every checkbox, I created a list of checkboxes, and found them all.
+
+INTERVIEW QUESION
+Also, findElemtns is also used to check if element is present on the page. If size of the list is = 0, that means there is no element with this locator. If you will use findElement, and selenium will not be able to find element based on locator - you will get an exception.
+
+
+##############TASK
+Assignment
+Go to ebay
+enter search term
+click on search button
+print number of results
+
+driver.findElements(By.tagName("button")); <- returns list of web elements.
+
+  /**
+   * Find all elements within the current page using the given mechanism.
+   * This method is affected by the 'implicit wait' times in force at the time of execution. When
+   * implicitly waiting, this method will return as soon as there are more than 0 items in the
+   * found collection, or will return an empty list if the timeout is reached.
+  List<WebElement> findElements(By by);
+
+
+  Xpath - stands for XML path. It was created to find elements on XML and HTML documents. Xpath uses tags, attributes and text to allocate element. If you cannot find element by any locator - xpath will do it.
+
+  There are 2 types of xpath: Relative and Absolute
+
+  Relative:
+
+  Means you can start searching element from anywhere in the page (DOM). DOM means Document Object Model
+  It always starts with //
+
+  //tag[@attribute='value']
+
+  //*[@attribute='value']
+
+  * means any tag
+
+  //tag[text()='Some text']
+
+  //*[contains(@attribute,'value')] - partial attribute value
+
+
+
+
+###################################################
+7)
+
+We will talk about check boxes, radio buttons, and something else:)
+
+Please work on the warm up task!
+
+TEST 1
+go to amazon
+enter any search term
+click on search button
+verify title contains search term
+
+TEST 2
+go to wikipedia.org
+enter search term ‘selenium webdriver’
+click on search button
+click on search result ‘Selenium (software)’
+verify url ends with ‘x’
+
+Advise: Do not try to make test pass. You have to find bugs.
+
+Goal of tester(manual or automation) to catch bugs. If your script fails - maybe you found a bug. Do not try to make your test pass.
+
+
+Story:
+
+I found a bug, in the application, with my co-worker script. The thing was, his script wasn't working properly.
+ Why? because he had to fill out work with different values.
+ But what he he entered into form, same values. I noticed from the regression report, that test data looks weird.
+  I've tried to change his test and run it again.
+  Turns out that out of two input boxes, only one was saving data, another one - was just copying data.
+
+What do you do if script fails?
+
+Run it again, maybe it's a script issue (locators are wrong, not enough wait time, etc..)
+
+Test manually (if your script is correct, confirm bug by manual testing)
+If it's a bug - report.
+
+This an example of radio button.
+
+<input type="radio" id="blue" name="color" checked="">
+
+Tag name - input
+
+type - radio
+
+These 2 things are required if you want to create radio button.
+
+.isSelected() - verifies if radio button/check box is selected. Returns true or false.
+
+isEnabled() - Is the element currently enabled or not?
+
+Or in other words, isEnabled() returns true if you can click on radio button. If it's disabled - it will return false.
+
+!greenBTN.isEnabled() - to check if button is disabled.
+
+
+	//TASK!
+    //write a test(method) that will do following:
+    //verify that blue button is selected
+    //then click on black button
+    //verify that black button is selected
+    //verify that blue button is not selected
+
+Relative xpath that can find all radio buttons on the page:
+//input[@type='radio']
+
+Most common syntax of xpath: //tagname[@attribute='value']
+Every radio button must have tag input, and be type of radio
+
+#######################Checkboxes
+
+<input type="checkbox" checked="">
+
+like radio button, check box is also another variation of input in HTML.
+
+To transform input box into check box, you need to specify type that is equals to checkbox
+
+Checkbox can be preselected
+If you have a group of check boxes with a same name attribute, you will be able to select only one.
+
+#################TASK
+
+1. Go to http://practice.cybertekschool.com/checkboxes
+2. Verify that checkbox 1 is not selected.
+3. Verify that checkbox 2 is selected.
+
+
+//input[@type='checkbox'][1]
+
+This xpath means find me input with attribute type that has value checkbox, and get only first element.
+
+.isDisplayed() - will return true, if element is not hidden. In HTML you can hide elements, even though they are in source code. Thus, element will not be visible to user.
+
+INTERVEW QESTION: HOW TO VERIFY THAT ELEMENT DOESN'T EXIST ANY MORE?
+This method (isDisplayed()) will only check if element is visible or no.
+ If element is not on page at all, you will get NoSuchElementException.
+ I saw many times, when people where using this method to verify that element doesn't exist any more.
+ This is a mistake. In order to check if element doesn't exist, use: findElements(locator).size() == 0.
+ If list is empty, that means this element doesn't exists, not in the code. No exception will happened.
+  For example, you need to verify that that record was deleted, or some image, etc.
+
+
+
+################################################################
+
+8)
+
+Agenda:
+	-we will talk a little more about xpath
+	it's not the last session on xpath, we will have class dedicated to locators.
+	- drop downs, how to handle them. Drop downs with select and without.
+	- list of elements or List<WbElement> and findElements (continue)
+
+###### XPATH (XML Path)
+
+One of the locators strategies in selenium. How to use it?
+
+By.xpath(locator)
+
+For FireFox, there was a extension called FireBug, FirePath that could generate xpath for any element. No these extension deprecated.
+
+In google chrome or firefox, you can get auto generated xpath by default.
+
+I personally don't trust any auto-generated locators. I prefer to build it by myself.
+I would say the las option for locator, is xpath based on text of element, that always worked for me.
+
+
+Based on my experience, auto-generated lcoators not very reliable. You can use them, if you really don't know how to create one.
+
+XPATH is very useful when:
+	you cannot find element other than only by text.
+	you have to find dynamic element (some attribute values are dynamic, position of element is dynamic)
+
+
+There are 2 types of xpath:
+
+Relative and Absolute.
+
+I would say that we are trying to use only relative xpath.
+
+Absolute:
+1. It always starts from '/'
+2. It must start from root element <html> tag. You cannot start from the middle of the page. You must go from parent to child,
+you have to go through entire tree of elements.
+
+
+/html/body/div/div[2]/div/div[1]/button[3]
+
+Story:
+
+At work, we had requirement to change all possible locators from xpath to css.
+ Our test lead inferred that it will reduce execution time. Actually - not.
+
+Id should be faster then xpath, this is what people say. But, in my application,
+I didn't notice any difference while testing on google chrome. On IE - xpath was a little slower(very subjective).
+ Again, it's my personal experience. IN google, you can find different opinion. In terms of performance.
+ css and id is the same. Selenium, uses css selector internally for id.
+
+
+Relative XPATH:
+
+1. Always starts with //
+2. It can start from anywhere.
+
+basic syntax:
+
+//tag[@attribute='value']
+//*[@attribute='value']
+//tag[text()='some text']
+//*[contains(@attribute,'value')]
+//*[contains(text(),'some text']
+
+* - means any tag.
+
+//button[text()='Button 4']
+//button[@onclick='button4()']
+//*[contains(text(),'Button 4')]
+//button[contains(@onclick,'4')]
+
+
+//select[@aria-label='Select a category for search']
+
+.= is the same as text()=
+
+//button[5] - to get the fifth one
+
+//button[last()] - last element.
+
+inside [ ] you can specify index of element.
+
+//button[@class='btn btn-primary'][@onclick='button2()']
+
+
+- to specify 2 attributes
+
+//button[@class='btn btn-primary' and @onclick='button2()']
+
+starts with some value:
+
+//button[starts-with(@id,'button_')]
+
+To be continue.....
+
+In HTML, usually dropdowns have tag <select>
+
+<select id="dropdown">
+     <option value="" disabled="disabled" selected="selected">Please select an option</option>
+     <option value="1">Option 1</option>
+     <option value="2">Option 2</option>
+ </select>
+
+ In Selenium, there is a special class that can handle these kind of drop downs. We use Select class.
+
+ import org.openqa.selenium.support.ui.Select;
+
+ .getFirstSelectedOption() - will return web element that represents already selected option in the dropdown. We can read text, value or other attributes of this selection.
+ Usually, we read only text to verify that selected text is equals to expected one.
+
+
+import org.openqa.selenium.support.ui.Select;
+
+Use only this import. Importing something different means dealing with totally different library. This library is coming from selenium package.
+
+Select in Selenium with Select class from Selenium
+
+hahaha....
+
+How to deal with <select> drop down?
+
+Step 1. Find this dropdown by some locator and create webelement.
+Step 2. Create an object of Select class.
+Step 3. Provide webelement from Step 1 into constructor of Select object.
+
+
+value of attribute value
+
+ha ha.. again, very funny selenium joke (no)
+
+<option value="PA">Pennsylvania</option>
+
+we can select this option based on value PA or based on visible text Pennsylvania
+
+
+Homework:
+
+Practice:
+	Task #1
+       deselectAll();
+       deselectByIndex();
+       deselectByValue();
+       deselectByVisibleText();
+       isMultiple();
+
+   Task #2
+    Also, write a method that will check that values in dropdown are stored in the alphabetic order
+
+   Task #3
+   	Try to automate non-select dropdown. (Select a website)
+
+
+#####################################################
+
+9)
+
+7/7/2019
+
+ Today we will talk about TESTNG
+
+
+What is unit testing?
+
+Testing of smallest functional part of application.
+In other words - testing of methods.
+
+Test data: array1{1,2,453, 3};
+
+assertEquals(findMax(array1), 453); // if it's true,
+
+unit test passed.
+
+public int findMax(int[] array){
+	int max = array[0]
+	for(int i: array){
+		if(i> max)
+		 max = i
+	}
+	return max;
+}
+
+My story
+
+###I've never done unit testing at work,
+it was developers responsibility. My developers always called
+unit tests junits.
+
+Unit tests written manually by developers. Unit test is an
+essential testing stage that helps to find bugs and fix them
+immediately.
+
+For unit testing, there are some popular testing frameworks
+(or tools) such as: TestNG (java), JUnit (java), NUnit (.net).
+
+TestNG - let's you write unit tests and do assertions. Also it
+helps us to generate reports.
+
+###I would say that report is the most important thing
+for management. Why? Because they don't check your code,
+they can understand what tests passed or failed only based
+on report. Report is like visual representation of test results.
+TestNG helps us to group tests, create test suites. Perform data
+driven testing (DDT).
+
+Example:
+assertEquals(2, 2),
+assertFalse( "apple" == "orange"),
+assertTrue("apple".equals("apple"))
+
+As selenium testers, we use testng for writing, organizing,
+asserting and running selenium scripts.
+
+@Test
+public void test1(){
+	driver.get("google.com");
+	driver.find().click()
+}
+
+@Test - it calls annotation. This annotation will turn method into
+test. So we don't need main method to run our code. We can put this
+annotation and run method as a test.
+
+
+How to add testng? You need to add library. Since we use maven, we can add dependency:
+
+ <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+
+TestNG assertions it's a mechanism for asserting/verifying.
+
+
+Assert class provides assertions.
+
+For example we use assertEquals to verify if expected value is equals to the actual. If no - exception will occur, and in the console output you will see:
+
+java.lang.AssertionError: expected [orange] but found [apple]
+Expected :orange
+Actual   :apple
+
+Once assertion fails - your test execution will stop.
+
+Assert.assertTrue() - checks if something is true.
+
+java.lang.AssertionError: expected [true] but found [false]
+Expected :true
+Actual   :false
+
+
+assertFalse() - checks if something is false. If no - then it fail and stop your execution.
+
+@Test - to create test method.
+
+
+using this annotation we don't need a main method to run class/ method.
+
+@BeforeMethod -> it will run method before every test method, regardless if other tests failed or passed.
+We can do following things:
+	 prepare test data
+	 open browser
+	 create connections
+	 open some URL
+	 Login
+
+
+@AfterMethod -> method with this annotation will always run after every test method regardless if test failed or passed.
+What kind of things we can do:
+	close/quit browser
+	log out
+	close connections (related to JDBC)
+	generate report
+
+For these method we always use public void methods. No static.
+
+With @Test (priority = 0)
+
+We can change priority execution.
+
+By default, TestNG runs tests in alphabetic order.
+
+But, we can change order. Just put  (priority = 0) next to the @Test
+
+Lower number - higher priority.
+
+By default, priority is set to 0. If @Test doesn't have a priority - then TestNG will set priority based on alphabetic order.
+
+@BeforeClass - method with this annotation will be running only once in the class, regardless of amount of tests. What we can put in this method?
+	 prepare test data
+	 create connections
+	 initialize driver
+	 set webdriver properties
+
+BeforeClass -> BeforeMethod -> method -> AfterMethod -> AfterClass
+
+Before class
+Before method
+I am a test1!
+After method
+After class
+
+
+####2 Tests in the class
+
+Before class - runs only once in a class before
+
+Before method - runs before every test method
+I am a test1! - test itself
+After method - runs after every test method
+
+Before method - runs before every test method
+I am a test2! - test itself
+After method - runs after every test method
+
+After class - runs only once in a class after
+
+
+@channel TASK:
+Test Case default date
+open website http://practice.cybertekschool.com/dropdown
+verify default year is current 2019
+verify default month is current July
+verify default day is current 7
+
+@BeforeClass - > runs once before everything in a class.
+
+@AfterClass - > runs once after everything in a class.
+Runs only once, regardless of number of tests in the class.
+
+####Interview question:
+
+What's the difference between assert and verify?
+
+assertion --> if it fails, it fails test also. Execution doesn't continue after failure.
+verification --> if it fails, show must go on...Execution continue.
+
+TestNG provide Assert class. Assert class has methods for assertions.
+
+assertEquals(param1, param2)
+assertTrue(boolean)
+assertFalse(boolean)
+
+Also, testng provides soft assertions as well as hard assertions(regular). In case of soft assertions,
+your test will not interrupt in case of failure.
+
+
+
+##############################################################
+10)
+
+
+Todays is 7/9/2019
+
+Agenda:
+ Xpath only:
+
+ 	Absolute vs relative xpath
+ 	contains
+ 	starts-with
+ 	text() or .
+ 	*
+ 	indexes
+ 	find parent/ancestor then element
+ 	siblings
+ 	Why to use xpath over other locators?
+
+#################################
+
+	Which locators to choose?
+
+
+	1. ID always first
+	2. then probably CSS Selector
+	3. Then everything else
+	Xpath can handle any element
+
+	What is dynamic element. Element that has different position on every load.
+
+	If id is dynamic (that means id="value", after reloading of page id="new_value") that means we cannot rely on this id.
+
+	How to check or how to figure out that id is dynamic?
+	Try to refresh page and see if id changes.
+
+	It's not only about being dynamic. Let's say developers updated code and they manually changed some attributes.
+
+Story:
+
+During development of new functionality, I was developing my automation scripts. And after design was changed,
+ I had to update locators and even logic of my script too.
+
+
+##############################
+
+Absolute vs Relative xpath.
+ Absolute xpath starts from root element. In HTML root element is <html>. You cannot jump into middle of HTML document.
+ Example:
+
+  String fullNameLocator = "html/body/div/div[2]/div/div/form/div/div[1]/input[@name='full_name']";
+    String emailLocator = "html/body/div/div[2]/div/div/form/div/div[1]/input[@name='email']";
+    String signUpButton = "html/body/div/div[2]/div/div/form/button";
+
+
+ org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+
+ Relative xpath:
+ 	//tagname[@attribue='value']
+
+ 	tag - has purple color
+ 	attribute - light brown
+ 	blue - it's a value of attribute
+ 	black - text
+
+ 	<div class="large-6 small-12 columns"> <-opening tag
+        <label for="password">Email</label>
+        <input type="email" name="email">
+    </div> <- closing tag
+
+    label and input are children of div
+    div is a parent of label and input  - label and input are inside div
+    label and input are siblings - because they have same parent
+
+    Browser treats  HTML page like a tree of nodes.
+
+ String button3Locator = "//button[starts-with(@id,'button_')]";
+
+ starts-with - to specify beginning of attribute or text.
+
+ REMEMBER: There is no perfect locator. You have to write it and test it. If you need locator to print on specific element, but it point on multiple elements - change it (choose different attributes, maybe use text or partial text, use parent-child relationship).
+
+One more thing. Also, we can use starts-with to allocate multiple elements (List<WebElement>) based on partially common attribute value.
+
+Text and attribute value is case sensitive.
+
+
+
+
+//button[contains(text(),'Button 4')] - we can find button based on partial text.
+
+>text<
+
+//button[5] - with [index] we can specify which child do we need.
+
+* - means wildcard, it can replace any tag
+
+//button[text()='Button 1']
+//button[.='Button 1'] - . means text.
+
+In this case we are looking for element by exact text. If there are some spaces or extra chars, this locator will not work. Text must be exactly same.
+
+//*[contains(@name,'button2')] - find any element, that contains name 'button2'
+
+
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='disappearing_button']"}
+
+
+If element is not in the DOM (let's say not in the html), and you are trying to find that element, you will get exception. After we clicked on the button, that button was deleted. isDisplayed() will not work, because it will fail on the finding stage.
+
+If you need to check if element is gone, not on the page:
+
+Assert.assertTrue(driver.findElements(By.xpath(button6locator)).size() == 0);
+
+
+findElements(By.xpath(button6locator)).size() == 0 <- means 0 elements found based on this locator. No exception will occur.
+
+The thing is findElements() returns List<WebElements>. If this collection is empty, or size is equals to 0, then no elements found.
+
+(//div[@id='custom_entity-update']//a)[1] - means find element with id custom_entity-update and go to child a. Then select only first element.
+
+//div[@id='custom_entity-update']//a[.='General'] - find div with id custom_entity-update, and the find child with link text General.
+
+
+to sort array Arrays.sort()
+List - Collection.sort(arraylist)
+
+
+##########################################################################
+11)
+
+Today is 7/10/2019
+
+Topic of today is CSS Selector.
+
+This is one of the locators that we use to find elements.
+
+To build css selector you can use tag name, attribute, parent-child relationship, you can use position.
+
+If we compare it with Xpath, css selector is faster and more readable.
+
+It doesn't starts with // or / , id doesn't have @.
+
+Basic syntax:
+
+	tagname[attribute='value']
+
+CSS selector (locator) cannot find element by text.
+
+[id='disappearing_button'] or #disappearing_button
+
+
+# - means id.
+
+. - means class
+
+<h3 class="h3">Multiple buttons</h3>
+
+h3[class='h3'] or [class='h3'] or .h3
+
+
+if  you use .h3 for css selector, it means find me element with class h3.
+
+##### Index of element #########
+
+with css
+.btn.btn-primary:nth-of-type(5)
+or
+
+[class='btn btn-primary']:nth-of-type(5)
+
+with xpath
+//button[@class='btn btn-primary'][5]
+
+
+
+[class='btn btn-primary']:nth-of-type(5) - means find me 5th element with class btn btn-primary.
+
+######## Starts-with ###########
+
+caret sign "^" - means starts-with
+
+[id^='button_'] - means find me element, that has id that starts with button_
+
+### Ends-with and multiple attributes
+
+[id$='_button'][onclick='button4()'] - in this case, we specified 2 attributes.
+*-
+$ - means ends with.
+
+######### Contains ############
+
+[onclick*='5'] - means find me element that contains 5 in attribute onclick.
+
+* - stands for "contains".
+
+[attribute*='value'] - means attribute contains value 'value'.
+
+# - stands for id
+
+#disappearing_button - means element with id disappearing_button.
+
+If in xpath / means direct child, in css we use >.
+
+######### From parent To Child ###################
+
+html/body/div/div[2]/div/div[1]/p - absolute xpath
+
+This is CSS Selector style:
+
+html > body > div > div:nth-of-type(2) > div > div:nth-of-type(1) > p
+
+html > * - means any direct child of html.
+
+##############################
+  throw new SkipException("I don't want to run this test.");
+
+  Will skip test. If you put before something, you will get:
+
+  unreachable statement!
+
+@Ignore - will ignore test
+
+
+ enabled = fal778se - to disable test
+
+  dependsOnMethods = {"button1Test"} - will indicate methods that affects on current test.
+   If those methods fail, it will ignore method with dependency.
+
+
+  dependsOnMethods - it can be useful when method is dependent on method precondition.
+  We can also specify priority. So method with lowest priority will be running first.
+
+
+    @Test (priority = 2, dependsOnMethods = {"button1Test", "setup"})
+
+We can specify multiple dependencies for dependsOnMethods parameter.
+That means test can be dependent on multiple methods at the same time.
+
+
+If setup method fails, anyway you can run test. If test has a dependency, method that it depend on, must run before anyways.
+ Regardless on priority.
+
+Priority will be ignored in this case.
+
+
+
+########################################################################
+12)
+
+Today is review and VYTRACK automation practice
+
+This is what I used the most.
+EXAMPLE: List<Map<String, String>> - for data tables. (from DB, from Excel file or from cucumber data tables.)
+
+
+Scenario: Verify for store manager
+Login as story manager
+Go to Activities --> Calls
+Verify that Log Call button is displayed
+Go to Activities --> Calendar Events
+Verify that Create Calendar Event button is displayed
+
+Poem: My code.
+
+Ice cream for kids
+Flowers for ladies
+Code for geeks...
+
+ Thread.sleep(seconds * 1000 ); means put on hold thread.
+
+ What is thread? It's a path of code execution.
+
+ Java supports multi-threading. That means multiple tasks can be executed at the same time.
+#######################
+
+"Test case: Save and Cancel options
+Login as sales manager
+Go to Activities --> Calendar Events
+Click on Create Calendar Event
+Verify Cancel button is displayed
+Verify Save And Close button is displayed
+Verify Save And Close dropdown option is displayed
+Verify Save And New dropdown option is displayed
+Verify Save dropdown option is displayed
+
+One thing that I want to emphasize that it's not final structure of automation framework. We don't design our framework based on class. Any duplication has been done due to practice purpose.
+
+
+
+"Test Case: Default options
+Login as sales manager
+Go to Activities --> Calendar Events
+Click on Create Calendar Event
+Default owner name should be current user
+Default title should be blank2
+Default start date should be current date
+Default start time should be current time
+
+Date/time format:
+
+http://tutorials.jenkov.com/java-internationalization/simpledateformat.html
+
+
+
+
+
+
+
+
+
+

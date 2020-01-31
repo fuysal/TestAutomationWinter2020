@@ -18,4 +18,15 @@ public class JavaTestNGDemo {
         String str2 = "orange";
         Assert.assertEquals(str1,str2);
     }
+
+    @Test
+    public  void test3(){
+        String str1 = "ADAF";
+        String str2 = "AAA";
+        Assert.assertTrue(str1.contains(str2));
+    }
+    @Test
+    public  void test4(){
+        Assert.assertFalse(false);
+    }
 }
